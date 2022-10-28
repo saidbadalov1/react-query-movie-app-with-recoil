@@ -117,24 +117,30 @@ header nav ul li {
   background-color: rgb(17, 10, 10);
 }
 
-.pagination {
+/* Pagination  */
+.paging {
+  list-style: none;
   display: flex;
   flex-direction: row;
   column-gap: 10px;
 }
 
-.pagination button {
-  padding: 5px 10px;
-  border-radius: 10px;
-  border: 0;
+.paging li a {
   cursor: pointer;
-  transition: all 0.3s;
+  color: white;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
+  background-color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
-.pagination button:hover {
-  background-color: rgb(0, 130, 244);
+.paging li a:hover {
+  background-color: rgb(237, 0, 0);
+}
+
+.active-paging {
+  background-color: red !important;
 }
 
 /* Movie Details */
