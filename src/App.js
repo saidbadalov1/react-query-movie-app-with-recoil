@@ -1,24 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route, Link } from 'react-router-dom';
+import Movies from './components/Movies';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { RecoilRoot } from 'recoil';
+import MovieDetails from './components/MovieDetails';
 
 function App() {
+  const client = new QueryClient();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RecoilRoot>
+      <QueryClientProvider client={client}>
+        <div>
+          <header>
+            <nav>
+              <ul>
+                <li>
+                  <Link to='/' style={{ color: 'white' }}>
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to='/movies' style={{ color: 'white' }}>
+                    Movies
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          <Routes>
+            <Route path='/' element={<Movies />} />
+            <Route path='/movies' element={<Movies />} />
+            <Route path='movies/:movieId' element={<MovieDetails />} />
+            <Route path=':movieId' element={<MovieDetails />} />
+          </Routes>
+        </div>
+        <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
+      </QueryClientProvider>
+    </RecoilRoot>
   );
 }
 

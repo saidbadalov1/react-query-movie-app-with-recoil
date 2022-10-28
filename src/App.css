@@ -1,38 +1,187 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: rgb(53, 13, 53);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+  width: 100%;
+  height: 80px;
+  background-color: rgb(0, 0, 0);
+  color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header nav {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  column-gap: 40px;
+}
+
+header nav ul li {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.movies {
+  width: 90%;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.popular-movies {
+  color: white;
+  text-align: center;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 35px 0;
+  gap: 50px;
+}
+
+.movie-card {
+  width: 230px;
+  height: 300px;
+  text-align: center;
+  border: 3px solid white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.movie-card img {
+  min-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.movie-name {
+  font-size: 14px;
+  text-align: start;
+  color: white;
+  position: absolute;
+  bottom: 70px;
+  background-color: black;
+  width: 100%;
+  padding: 15px;
+}
+
+.movie-average {
+  font-size: 16px;
+  color: white;
+  background-color: rgb(4, 0, 0);
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.movie-button {
+  margin: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+.movie-button:hover {
+  background-color: rgb(17, 10, 10);
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.pagination button:hover {
+  background-color: rgb(0, 130, 244);
+}
+
+/* Movie Details */
+.movie-details {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.movie-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 10px 0;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.movie-details img {
+  width: 100%;
+  height: 400px;
+  object-position: center;
+  border-radius: 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie-overview {
+  color: rgb(157, 156, 156);
+  font-weight: 600;
+  max-width: 700px;
+}
+
+.movie-release {
+  font-size: 14px;
+  margin: 10px 0;
+  color: white;
+  font-weight: 700;
+}
+
+.go-back {
+  width: 150px;
+  border: 0;
+  border-radius: 4px;
+  padding: 10px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background-color: rgb(62, 61, 61);
+  font-weight: 600;
+}
+
+.go-back:hover {
+  background-color: black;
+  color: white;
 }
